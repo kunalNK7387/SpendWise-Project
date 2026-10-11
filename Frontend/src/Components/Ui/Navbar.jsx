@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Wallet,
   Sun,
@@ -17,6 +17,15 @@ import {
 } from "lucide-react";
 
 const Navbar = () => {
+  const { currentPage, setCurrentPage } = useApp();
+  // Mobile menu state
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  //Navigation To another Page
+  const navigateTo = () => {
+    setCurrentPage(page);
+    setMobileMenuOpen(false);
+  };
   // Navigation links
   const navLink = [
     {
@@ -55,9 +64,26 @@ const Navbar = () => {
           </button>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
-            {navLink.map(link)=>{
-                
-            }}
+            {navLink.map((link) => {
+              const isActive = currentPage === link.id;
+
+              return (
+                <button
+                  key={link.id}
+                  onClick={() => navigateTo(link.id)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer
+                     ${
+                    isActive
+                      ? "text-[#4F46E5] bg-indigo-50/70 dark:text-[#818CF8] dark:bg-indigo-950/40"
+                      : "text-[#64748B] hover:text-[#0F172A] hover:bg-slate-100/70 dark:text-[#94A3B8] dark:hover:text-[#F8FAFC] dark:hover:bg-slate-800"
+                  }`
+                }
+                >
+                  {link.icon}
+                  {link.label}
+                </button>
+              );
+            })}
           </nav>
         </div>
       </div>
