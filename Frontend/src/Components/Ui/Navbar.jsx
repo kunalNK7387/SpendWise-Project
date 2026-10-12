@@ -18,7 +18,8 @@ import {
 import { useApp } from "../../Context/AppContext";
 
 const Navbar = () => {
-  const { currentPage, setCurrentPage } = useApp;
+  const { currentPage, setCurrentPage, user, logout, openAddTransactionModal } =
+    useApp;
   // Mobile menu state
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -88,7 +89,7 @@ const Navbar = () => {
         </div>
         {/* Right Actions */}
         <div className="flex items-center gap-3">
-           {/* Add Expense Button */}
+          {/* Add Expense Button */}
           {user && (
             <Button
               size="sm"
@@ -98,7 +99,8 @@ const Navbar = () => {
               className="hidden sm:inline-flex"
             >
               Add Expense
-            </Button>)}
+            </Button>
+          )}
         </div>
       </div>
     </header>
