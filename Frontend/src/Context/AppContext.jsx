@@ -176,15 +176,13 @@ export const AppProvider = ({ children }) => {
 
   //Save Transaction to localStorage
   useEffect(() => {
-    localStorage.setItem("spendwise_transaction");
-    JSON.stringify(transactions);
+    localStorage.setItem("spendwise_transaction", JSON.stringify(transactions));
   }, [transactions]);
 
   //save user to localStorage
   useEffect(() => {
     if (user) {
-      localStorage.setItem("spendwise_user");
-      JSON.stringify(user);
+      localStorage.setItem("spendwise_user", JSON.stringify(user));
     } else {
       localStorage.removeItem("spendwise_user");
     }
