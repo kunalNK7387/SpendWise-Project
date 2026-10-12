@@ -269,4 +269,14 @@ export const AppProvider = ({ children }) => {
   };
 
   //Restore Sample Data
+  const resetToSampleData = () => {
+    setTransactions(SAMPLE_TRANSACTIONS);
+    setUser(DEFAULT_USER);
+
+    addToast({
+      type: "info",
+      title: "Sample Data Restored",
+      message: "Restored 11 student expense & income records.",
+    });
+  };
 };
