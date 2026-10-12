@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const AppContext = createContext(undefined);
 
@@ -169,7 +169,7 @@ export const AppProvider = ({ children }) => {
   // Transaction modal state
   const [isTransactionModalOpen, setIsTransactionModalOpen] = useState(false);
 
-  const [editTransaction, setEditTransaction] = useState(null);
+  const [editingTransaction, setEditingTransaction] = useState(null);
 
   // Budget modal state
   const [isBudgetModalOpen, setIsBudgetModalOpen] = useState(false);
@@ -242,7 +242,7 @@ export const AppProvider = ({ children }) => {
 
   //Delete Transaction
   const deleteTransaction = (id) => {
-    const transaction = transactions.find((item) => (item) => item.id === id);
+    const transaction = transactions.find((item) => item.id === id);
 
     setTransactions((prev) => prev.filter((item) => item.id !== id));
 
@@ -279,4 +279,133 @@ export const AppProvider = ({ children }) => {
       message: "Restored 11 student expense & income records.",
     });
   };
+
+  // Login
+  const login = (email, name) => {
+    const displayName = name || email.split("@")[0] || "Student";
+
+    const initials =
+      displayName
+        .split(" ")
+        .map((word) => word[0])
+        .join("")
+        .toUpperCase()
+        .substring(0, 2) || "ST";
+
+    const loggedInUser = {
+      id: "usr_" + Date.now(),
+      name: displayName,
+      email,
+      college: "Indian Institute of Technology / College Campus",
+      monthlyBudget: user?.monthlyBudget || 8000,
+      avatarInitials: initials,
+    };
+
+    setUser(loggedInUser);
+    setCurrentPage("dashboard");
+
+    addToast({
+      type: "success",
+      title: "Welcome back!",
+      message: `Signed in as ${loggedInUser.name}.`,
+    });
+  };
+
+  // Register
+  const register = (name, email, college, budget) => {
+    const initials =
+      name
+        .split(" ")
+        .map((word) => word[0])
+        .join("")
+        .toUpperCase()
+        .substring(0, 2) || "ST";
+
+    const newUser = {
+      id: "usr_" + Date.now(),
+      name,
+      email,
+      college: college || "College Campus, India",
+      monthlyBudget: budget || 7000,
+      avatarInitials: initials,
+    };
+
+    setUser(newUser);
+    setCurrentPage("dashboard");
+
+    addToast({
+      type: "success",
+      title: "Account Created",
+      message: `Welcome to SpendWise, ${name}!`,
+    });
+  };
+
+  // Logout
+  const logout = () => {
+    setUser(null);
+    setCurrentPage("home");
+
+    addToast({
+      type: "info",
+      title: "Logged Out",
+      message: "You have been safely signed out.",
+    });
+  };
+
+  // Open modal to add a transaction
+  const openAddTransactionModal = () => {
+    setEditingTransaction(null);
+    setIsTransactionModalOpen(true);
+  };
+
+  // Open modal to edit a transaction
+  const openEditTransactionModal = (transaction) => {
+    setEditingTransaction(transaction);
+    setIsTransactionModalOpen(true);
+  };
+
+  // Close transaction modal
+  const closeTransactionModal = () => {
+    setEditingTransaction(null);
+    setIsTransactionModalOpen(false);
+  };
+
+  // Values shared with child components
+
+  const value = {
+    currentPage,
+    setCurrentPage,
+    user,
+    transactions,
+    addTransaction,
+    updateTransaction,
+    deleteTransaction,
+    updateBudget,
+    resetToSampleData,
+    login,
+    register,
+    logout,
+    toasts,
+    addToast,
+    removeToast,
+    isTransactionModalOpen,
+    openAddTransactionModal,
+    openEditTransactionModal,
+    closeTransactionModal,
+    editingTransaction,
+    isBudgetModalOpen,
+    setIsBudgetModalOpen,
+  };
+
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
+// Custom hook to access AppContext
+
+export function useApp() {
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error("useApp must be used within an AppProvider");
+  }
+  return context;
+}
