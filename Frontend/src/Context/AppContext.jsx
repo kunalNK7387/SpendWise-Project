@@ -256,4 +256,17 @@ export const AppProvider = ({ children }) => {
   };
 
   // Update monthly budget
+  const updateBudget = (newBudget) => {
+    if (!user) return;
+
+    setUser({ ...user, monthlyBudget: newBudget });
+
+    addToast({
+      type: "Success",
+      title: "Budget Updated",
+      message: `Monthly budget set to ${newBudget.toLocaleString("en-IN")}.`,
+    });
+  };
+
+  //Restore Sample Data
 };
