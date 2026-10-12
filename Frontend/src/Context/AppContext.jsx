@@ -191,5 +191,69 @@ export const AppProvider = ({ children }) => {
   }, [user]);
 
   //Add toast notification
-  const 
+  const addToast = (toast) => {
+    const id =
+      "toast_" + Date.now() + Math.random().toString(36).substring(2, 5);
+
+    setToasts((prev) => [...prev, { ...toast, id }]);
+
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((toastItem) => toastItem.id !== id));
+    }, 4000);
+  };
+
+  // Remove toast notification
+  const removeToast = (id) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
+  };
+
+  //Add Transaction
+  const addTransaction = (txData) => {
+    const newTx = {
+      ...txData,
+      id: "tx_" + Date.now(),
+    };
+
+    setTransactions((prev) => [newTx, ...prev]);
+
+    addToast({
+      type: "Success",
+      title: "Transacrtion Recoreded",
+      message: `${newTx.title} (₹${newTx.amount.toLocaleString("en-IN")})added.`,
+    });
+  };
+
+  //Update Transaction
+  const updateTransaction = (id, updatedFilds) => {
+    setTransactions((prev) =>
+      prev.map((transaction) =>
+        transaction.id === id
+          ? { ...transaction, ...updatedFilds }
+          : transaction,
+      ),
+    );
+
+    addToast({
+      type: "Success",
+      title: "Transaction Updated",
+      message: "Changes Save Successfully.",
+    });
+  };
+
+  //Delete Transaction
+  const deleteTransaction = (id) => {
+    const transaction = transactions.find((item) => (item) => item.id === id);
+
+    setTransactions((prev) => prev.filter((item) => item.id !== id));
+
+    addToast({
+      type: "Info",
+      title: "Transaction Deleted",
+      message: transaction
+        ? `${transaction.title} removed.`
+        : "Transaction removed.",
+    });
+  };
+
+  // Update monthly budget
 };
