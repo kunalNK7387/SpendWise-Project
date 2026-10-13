@@ -35,6 +35,9 @@ const HomePage = () => {
             Open Demo Dashboard
           </Button>
         </div>
+        <div className="mt-12 mx-auto max-w-2xl border rounded-2xl border-slate-200 bg-white p-5 sm:p-6 shadow-md dark:border-slate-700 dark:bg-slate-800 text-left">
+            <div></div>
+        </div>
       </section>
     </div>
   );
