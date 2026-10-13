@@ -36,7 +36,23 @@ const HomePage = () => {
           </Button>
         </div>
         <div className="mt-12 mx-auto max-w-2xl border rounded-2xl border-slate-200 bg-white p-5 sm:p-6 shadow-md dark:border-slate-700 dark:bg-slate-800 text-left">
-          <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-4 dark:border-slate-700"></div>
+          <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-4 dark:border-slate-700">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-sm font-bold dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 ">
+                AS
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-slate-900 dark:text-slate-50">
+                  Aarav Sharma (COEP Pune)
+                </h3>
+
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Monthly Allowance: {formatINR(10000)} · Spent:{" "}
+                  {formatINR(5450)}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
