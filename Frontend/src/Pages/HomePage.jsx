@@ -51,6 +51,11 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
+            <div className="text-right">
+              <span className="text-xs font-semibold uppercase text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-950/40 px-2 py-0.5 rounded">
+                Safe: 54% Used
+              </span>
+            </div>
           </div>
         </div>
       </section>
