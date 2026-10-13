@@ -47,8 +47,7 @@ const HomePage = () => {
                 </h3>
 
                 <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Monthly Allowance: {formatINR(10000)} · Spent:{" "}
-                  {formatINR(5450)}
+                  Monthly Allowance:₹10,000 · Spent: ₹5,450
                 </p>
               </div>
             </div>
