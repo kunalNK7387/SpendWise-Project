@@ -57,6 +57,16 @@ const HomePage = () => {
               </span>
             </div>
           </div>
+          <div className="mt-4 grid grid-cols-3 gap-2 text-center ">
+            <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/60">
+              <span className="text-[10px] font-semibold uppercase text-slate-500 dark:text-slate-400 block">
+                Total Inflow
+              </span>
+              <span className="text-sm sm:text-base font-bold text-green-600 dark:text-green-400">
+                ₹16500
+              </span>
+            </div>
+          </div>
         </div>
       </section>
     </div>
