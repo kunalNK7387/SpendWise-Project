@@ -1,7 +1,10 @@
-import { Sparkle } from "lucide-react";
+import { ArrowRight, Sparkle } from "lucide-react";
 import React from "react";
+import { useApp } from "../Context/AppContext";
+import Button from "../Components/Ui/Button";
 
 const HomePage = () => {
+  const { setCurrentPage } = useApp();
   return (
     <div className="space-y-16 pb-16">
       {/* Hero Section */}
@@ -23,7 +26,14 @@ const HomePage = () => {
           integration.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-
+          <Button
+            size="lg"
+            variant="primary"
+            onClick={() => setCurrentPage("dashboard")}
+            rightIcon={<ArrowRight className="h-4 w-4" />}
+          >
+            Open Demo Dashboard
+          </Button>
         </div>
       </section>
     </div>
