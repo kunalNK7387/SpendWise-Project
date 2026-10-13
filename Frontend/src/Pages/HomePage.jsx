@@ -66,6 +66,15 @@ const HomePage = () => {
                 ₹16500
               </span>
             </div>
+            <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/60">
+              <span className="text-[10px] font-semibold uppercase text-slate-500 dark:text-slate-400 block">
+                Expenses
+              </span>
+
+              <span className="text-sm sm:text-base font-bold text-red-600 dark:text-red-400">
+                ₹6444
+              </span>
+            </div>
           </div>
         </div>
       </section>
