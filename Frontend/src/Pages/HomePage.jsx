@@ -121,7 +121,9 @@ const HomePage = () => {
       </section>
       {/* Feature Grid */}
       <section className="max-w-6xl mx-auto px-4">
-        <div></div>
+        <div className="text-center mb-10">
+            
+        </div>
       </section>
     </div>
   );
