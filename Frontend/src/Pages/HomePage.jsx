@@ -85,6 +85,38 @@ const HomePage = () => {
               </span>
             </div>
           </div>
+          <div className="mt-4 space-y-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              Recent Student Logs
+            </p>
+            <div className="flex items-center justify-between text-xs py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span className="text-slate-900 dark:text-slate-50">
+                Hostel Mess Share & Wi-Fi
+              </span>
+
+              <span className="font-semibold text-red-600 dark:text-red-400">
+                -₹3,800
+              </span>
+            </div>
+            <div className="flex items-center justify-between text-xs py-1.5 border-b border-slate-100 dark:border-slate-800">
+              <span className="text-slate-900 dark:text-slate-50">
+                Freelance Frontend Project
+              </span>
+
+              <span className="font-semibold text-green-600 dark:text-green-400">
+                +₹6,500
+              </span>
+            </div>
+            <div className="flex items-center justify-between text-xs py-1.5">
+              <span className="text-slate-900 dark:text-slate-50">
+                Canteen Thali & Filter Coffee
+              </span>
+
+              <span className="font-semibold text-red-600 dark:text-red-400">
+                -₹130
+              </span>
+            </div>
+          </div>
         </div>
       </section>
     </div>
