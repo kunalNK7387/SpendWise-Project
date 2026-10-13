@@ -36,7 +36,7 @@ const HomePage = () => {
           </Button>
         </div>
         <div className="mt-12 mx-auto max-w-2xl border rounded-2xl border-slate-200 bg-white p-5 sm:p-6 shadow-md dark:border-slate-700 dark:bg-slate-800 text-left">
-            <div></div>
+          <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-4 dark:border-slate-700"></div>
         </div>
       </section>
     </div>
