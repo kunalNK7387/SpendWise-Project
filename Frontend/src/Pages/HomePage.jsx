@@ -1,0 +1,33 @@
+import { Sparkle } from "lucide-react";
+import React from "react";
+
+const HomePage = () => {
+  return (
+    <div className="space-y-16 pb-16">
+      {/* Hero Section */}
+      <section className="reletive sm:pt-12 mx-auto max-w-4xl px-4 pt-8 text-center ">
+        <div className="inline-flex mb-6 items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-600 dark:border-indigo-900 dark:bg-indigo-900/40 dark:text-indigo-300 ">
+          <Sparkle className="h-4 w-4" />
+          <span>Designed for Indian Students & Young Earners</span>
+        </div>
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white ">
+          Track Every Rupee.
+          <span className="block text-indigo-600 dark:text-indigo-400">
+            Master Your Student Budget.
+          </span>
+        </h1>
+        <p className="mt-4 text-sm sm:text-base mx-auto max-w-2xl  leading-relaxed text-slate-600 dark:text-slate-400">
+          SpendWise is a clean, minimal personal expense tracker crafted
+          specifically for Indian college students. Record hostel expenses,
+          canteen chai, xerox printouts, and freelance earnings with zero bank
+          integration.
+        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default HomePage;
