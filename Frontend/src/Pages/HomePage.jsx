@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div className="space-y-16 pb-16">
       {/* Hero Section */}
-      <section className="reletive sm:pt-12 mx-auto max-w-4xl px-4 pt-8 text-center ">
+      <section className="reletive sm:pt-12 mx-auto max-w-4xl px-4 pt-8 text-center  ">
         <div className="inline-flex mb-6 items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-600 dark:border-indigo-900 dark:bg-indigo-900/40 dark:text-indigo-300 ">
           <Sparkle className="h-4 w-4" />
           <span>Designed for Indian Students & Young Earners</span>
@@ -122,7 +122,12 @@ const HomePage = () => {
       {/* Feature Grid */}
       <section className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-10">
-            
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-50">
+            Engineered For Student Life
+          </h2>
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            Practical design decisions tailored for Indian academic life.
+          </p>
         </div>
       </section>
     </div>
