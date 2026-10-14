@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  BookOpen,
   Coffee,
   PieChart,
   ShieldCheck,
@@ -177,7 +178,27 @@ const HomePage = () => {
         </div>
       </section>
       {/* Student Budgeting Rule: 50 / 30 / 20 */}
-      <section className="max-w-4xl mx-auto px-4"></section>
+      <section className="max-w-4xl mx-auto px-4">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 dark:border-slate-700 dark:bg-slate-800">
+          <div className="flex items-center gap-3 mb-4">
+            <BookOpen className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-50">
+              Student Budgeting Principle: The 50 / 30 / 20 College Rule
+            </h2>
+          </div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-6">
+            Recommended breakdown for Indian students managing a monthly
+            allowance (e.g. ₹8,000 / month):
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="p-4 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/20 border border-indigo-100 dark:border-indigo-900/40">
+              <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 block mb-1">
+                50% Essentials (₹4,000)
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
