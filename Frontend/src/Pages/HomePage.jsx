@@ -1,4 +1,10 @@
-import { ArrowRight, ShieldCheck, Sparkle } from "lucide-react";
+import {
+  ArrowRight,
+  Coffee,
+  PieChart,
+  ShieldCheck,
+  Sparkle,
+} from "lucide-react";
 import React from "react";
 import { useApp } from "../Context/AppContext";
 import Button from "../Components/Ui/Button";
@@ -134,9 +140,44 @@ const HomePage = () => {
             <div className="h-10 w-10 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4">
               <ShieldCheck className="h-5 w-5" />
             </div>
+            <h3 className="text-base font-bold text-slate-900 dark:text-slate-50">
+              100% Private & Manual
+            </h3>
+            <p className="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              No bank credentials, OTP scraping, or financial data leaks. You
+              control every transaction entry directly on your device.
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
+            <div className="h-10 w-10 rounded-lg bg-green-50 dark:bg-green-950/40 text-green-600 dark:text-green-400 flex items-center justify-center mb-4">
+              <Coffee className="w-5 h-5" />
+            </div>
+            <h3 className="text-base font-bold text-slate-900 dark:text-slate-50">
+              Indian Academic Categories
+            </h3>
+            <p className="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Preset categories for Food (Chai/Canteen), Education
+              (Books/Xerox), Travel (Metro/Auto), and Bills (Mobile 5G
+              recharges).
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
+            <div className="h-10 w-10 rounded-lg bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4">
+              <PieChart className="h-5 w-5" />
+            </div>
+            <h3 className="text-base font-bold text-slate-900 dark:text-slate-50">
+              Indian Academic Categories
+            </h3>
+            <p className="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Preset categories for Food (Chai/Canteen), Education
+              (Books/Xerox), Travel (Metro/Auto), and Bills (Mobile 5G
+              recharges).
+            </p>
           </div>
         </div>
       </section>
+      {/* Student Budgeting Rule: 50 / 30 / 20 */}
+      <section className="max-w-4xl mx-auto px-4"></section>
     </div>
   );
 };
