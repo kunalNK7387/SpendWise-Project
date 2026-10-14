@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkle } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkle } from "lucide-react";
 import React from "react";
 import { useApp } from "../Context/AppContext";
 import Button from "../Components/Ui/Button";
@@ -8,24 +8,24 @@ const HomePage = () => {
   return (
     <div className="space-y-16 pb-16">
       {/* Hero Section */}
-      <section className="reletive sm:pt-12 mx-auto max-w-4xl px-4 pt-8 text-center  ">
+      <section className="reletive mt-10 sm:pt-12 mx-auto max-w-4xl px-4 pt-8 text-center  ">
         <div className="inline-flex mb-6 items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-600 dark:border-indigo-900 dark:bg-indigo-900/40 dark:text-indigo-300 ">
           <Sparkle className="h-4 w-4" />
           <span>Designed for Indian Students & Young Earners</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white ">
+        <h1 className="text-3xl mt-5 sm:text-5xl font-extrabold tracking-wide text-slate-900 dark:text-white ">
           Track Every Rupee.
           <span className="block text-indigo-600 dark:text-indigo-400">
             Master Your Student Budget.
           </span>
         </h1>
-        <p className="mt-4 text-sm sm:text-base mx-auto max-w-2xl  leading-relaxed text-slate-600 dark:text-slate-400">
+        <p className="mt-8 text-sm sm:text-base mx-auto max-w-2xl  leading-relaxed text-slate-600 dark:text-slate-400">
           SpendWise is a clean, minimal personal expense tracker crafted
           specifically for Indian college students. Record hostel expenses,
           canteen chai, xerox printouts, and freelance earnings with zero bank
           integration.
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
           <Button
             size="lg"
             variant="primary"
@@ -128,6 +128,13 @@ const HomePage = () => {
           <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
             Practical design decisions tailored for Indian academic life.
           </p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
+            <div className="h-10 w-10 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4">
+              <ShieldCheck className="h-5 w-5" />
+            </div>
+          </div>
         </div>
       </section>
     </div>
