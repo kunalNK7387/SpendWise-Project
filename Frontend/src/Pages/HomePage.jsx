@@ -51,7 +51,7 @@ const HomePage = () => {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-slate-900 dark:text-slate-50">
-                  Aarav Sharma (COEP Pune)
+                  Aarav Sharma (Pune)
                 </h3>
 
                 <p className="text-xs text-slate-500 dark:text-slate-400">
