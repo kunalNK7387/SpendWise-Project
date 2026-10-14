@@ -2,6 +2,7 @@ import {
   ArrowRight,
   BookOpen,
   Coffee,
+  HelpCircle,
   PieChart,
   ShieldCheck,
   Sparkle,
@@ -195,7 +196,95 @@ const HomePage = () => {
               <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 block mb-1">
                 50% Essentials (₹4,000)
               </span>
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Hostel mess fees, Metro card recharge, phone data plan,
+                medicines, and notebooks.
+              </p>
             </div>
+            <div className="p-4 rounded-xl bg-purple-50/60 dark:bg-purple-950/20 border border-purple-100 dark:border-purple-900/40">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 block mb-1">
+                30% Lifestyle (₹2,400)
+              </span>
+
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Weekend canteen chai, college fest tickets, occasional Zomato
+                food delivery, movies.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-green-50/60 dark:bg-green-950/20 border border-green-100 dark:border-green-900/40">
+              <span className="text-xs font-bold text-green-600 dark:text-green-400 block mb-1">
+                20% Emergency Fund (₹1,600)
+              </span>
+
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Savings for unexpected semester fees, certification courses, or
+                emergency travel back home.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Frequently Asked Questions */}
+      <section className="max-w-4xl mx-auto px-4">
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-50 text-center mb-6">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          {[
+            {
+              q: "Why manual expense tracking instead of linking bank accounts?",
+              a: "Bank linking requires giving third parties SMS permissions and net banking credentials. Manual logging takes just 5 seconds per expense (like logging a ₹20 chai) and gives students conscious awareness of their daily spending habits.",
+            },
+            {
+              q: "Can I use SpendWise on both mobile and laptop?",
+              a: "Yes! SpendWise is desktop-first with fully responsive mobile cards, touch-friendly buttons, and mobile transaction lists.",
+            },
+            {
+              q: "Does it support Dark Mode for late-night study sessions?",
+              a: "SpendWise has first-class light and dark mode built using a unified design system with exact WCAG accessible contrast tokens.",
+            },
+            {
+              q: "Can I export my transactions for student project reports or Excel?",
+              a: "Yes, SpendWise includes a 1-click CSV export on the Transactions page so you can analyze your spending in Excel or Google Sheets.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800"
+            >
+              <h3 className="text-xs font-bold text-slate-900 dark:text-slate-50 flex items-center gap-2">
+                <HelpCircle className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+                {item.q}
+              </h3>
+
+              <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-400 leading-relaxed pl-5">
+                {item.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* Footer Banner */}
+      <section className="max-w-4xl mx-auto px-4 text-center">
+        <div className="rounded-2xl bg-indigo-50/70 border border-indigo-200 p-8 dark:bg-indigo-950/30 dark:border-indigo-900/40">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-slate-50">
+            Ready to take control of your student budget?
+          </h2>
+
+          <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+            No credit card, no bank login. Free and open for every Indian
+            student.
+          </p>
+
+          <div className="mt-5 flex items-center justify-center gap-3">
+            <Button
+              size="md"
+              variant="primary"
+              onClick={() => setCurrentPage("register")}
+            >
+              Create Free Student Account
+            </Button>
           </div>
         </div>
       </section>
